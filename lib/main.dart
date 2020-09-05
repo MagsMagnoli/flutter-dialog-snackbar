@@ -29,15 +29,20 @@ class MyHomePage extends StatelessWidget {
           onPressed: () {
             showDialog(
               context: context,
-              builder: (context) => AlertDialog(
-                title: Text('SnackBar Dialog'),
-                content: RaisedButton(
-                  child: Text('Show SnackBar'),
-                  onPressed: () {
-                    Scaffold.of(context).showSnackBar(
-                      SnackBar(content: Text('Hello, SnackBar!')),
-                    );
-                  },
+              builder: (context) => Scaffold(
+                backgroundColor: Colors.transparent,
+                body: Builder(
+                  builder: (context) => AlertDialog(
+                    title: Text('SnackBar Dialog'),
+                    content: RaisedButton(
+                      child: Text('Show SnackBar'),
+                      onPressed: () {
+                        Scaffold.of(context).showSnackBar(
+                          SnackBar(content: Text('Hello, SnackBar!')),
+                        );
+                      },
+                    ),
+                  ),
                 ),
               ),
             );
